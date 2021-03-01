@@ -1,0 +1,49 @@
+<!-- <h2>{{weather.city}}</h2>
+<img [src]="weather.icon" style="float: left;"/>
+<p>
+  Conditions: {{weather.conditions}}<br/>
+  Temperature: {{weather.temperature}} °F<br/>
+</p> -->
+
+
+<div class="container"> 
+  <div class="row">
+    <div class="card">
+     <div>
+      <h2 class="card-title">Displaying all the Records :</h2>
+     </div>
+     <div class="card-form">
+       <!-- <form #userlogin = "ngForm" (ngSubmit) = "onSubmit()" > -->
+         <div>
+            <ul class="allRecords">
+              <ng-container *ngFor="let currentRecord of currentRecords">
+                <ng-container *ngIf="currentRecord.is_deleted == false">
+                  <li>
+                    <span class="badge">{{currentRecord.tweet_id}}</span> {{currentRecord.tweet_content}}
+                    <span>
+                      <button class="btn btn-success" (click)="deleteUser(currentRecord.tweet_id)"> Delete</button>
+                    </span>
+                    <span>
+                      <button class="btn btn-success" (click)="editUser(currentRecord.tweet_id)" style="margin-left: 5px;"> Edit</button>
+                    </span>
+                  </li>
+                </ng-container>
+              </ng-container>
+            </ul>
+         </div>
+         <diV>
+          <span>
+            <button class="btn btn-success" (click)="addUser()"> Add</button>
+          </span>
+         </diV>
+     </div>  
+    </div>
+ </div>
+</div>
+
+
+
+
+
+
+ 
